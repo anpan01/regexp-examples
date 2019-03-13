@@ -9,19 +9,19 @@ module RegexpExamples
     # .{2,} is equivalent to .{2,4}
     # .{,3} is equivalent to .{0,2}
     # .{3,8} is equivalent to .{3,5}
-    MAX_REPEATER_VARIANCE_DEFAULT = 2
+    MAX_REPEATER_VARIANCE_DEFAULT = 100_000_000
 
     # Maximum number of characters returned from a char set, to reduce output spam
     # For example, if self.max_group_results = 5 then:
     # \d is equivalent to [01234]
     # \w is equivalent to [abcde]
-    MAX_GROUP_RESULTS_DEFAULT = 5
+    MAX_GROUP_RESULTS_DEFAULT = 100_000_000
 
     # Maximum number of results to be generated, for Regexp#examples
     # This is to prevent the system "freezing" when given instructions like:
     # /[ab]{30}/.examples
     # (Which would attempt to generate 2**30 == 1073741824 examples!!!)
-    MAX_RESULTS_LIMIT_DEFAULT = 10_000
+    MAX_RESULTS_LIMIT_DEFAULT = 1_000_000_000
     class << self
       def with_configuration(**new_config)
         original_config = config.dup

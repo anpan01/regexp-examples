@@ -8,3 +8,5 @@ end
 
 # Specify your gem's dependencies in regexp-examples.gemspec
 gemspec
+
+gem 'regexp-examples'
