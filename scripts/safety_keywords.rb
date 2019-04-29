@@ -24,42 +24,45 @@ $roadway_signs = /SI?GNS?/.examples
 
 $total = $grade_separated.length + $railroad_grade_separated.length + $overpass.length + $overpass_realign.length + $convert_one_way.length + $aux_lane.length + $widen_shoulders.length + $construct_shoulders.length + $upgrade_standards.length + $widen_lanes.length + $vertical_alignment.length + $super_two.length + $divided.length + $passing_lanes.length + $center_left.length + $roadway_signs.length
 
-File.open("./wordlist/safetyKeywords.txt", "w+") { 
-	|f| f.write(
-		"GRADE SEPARATED WORD LIST: " + $grade_separated.length.to_s + "\n",
-		"RAILROAD GRADE SEPARATED WORD LIST: " + $railroad_grade_separated.length.to_s + "\n",
-		"OVERPASS WORD LIST: " + $overpass.length.to_s + "\n",
-		"OVERPASS REALIGN WORD LIST: " + $overpass_realign.length.to_s + "\n",
-		"CONVERT ONE WAY WORD LIST: " + $convert_one_way.length.to_s + "\n",
-		"AUX LANE WORD LIST: " + $aux_lane.length.to_s + "\n",
-		"WIDEN SHOULDERS WORD LIST: " + $widen_shoulders.length.to_s + "\n",
-		"CONSTRUCT SHOULDERS WORD LIST: " + $construct_shoulders.length.to_s + "\n",
-		"UPGRADE STANDARDS WORD LIST: " + $upgrade_standards.length.to_s + "\n",
-		"WIDEN LANES WORD LIST: " + $widen_lanes.length.to_s + "\n",
-		"VERTICAL ALIGNMENT WORD LIST: " + $vertical_alignment.length.to_s + "\n",
-		"SUPER TWO WORD LIST: " + $super_two.length.to_s + "\n",
-		"DIVIDED: " + $divided.length.to_s + "\n",
-		"PASSING LANES WORD LIST: " + $passing_lanes.length.to_s + "\n",
-		"CENTER LEFT WORD LIST: " + $center_left.length.to_s + "\n",
-		"ROADWAY SIGNS WORD LIST: " + $roadway_signs.length.to_s + "\n",
-		"TOTAL: " + $total.to_s + "\n",
+# File.open("./wordlist/summary.txt", "a") { 
+# 	|f| f.write("/n",
+# 		"GRADE SEPARATED WORD LIST: " + $grade_separated.length.to_s + "\n",
+# 		"RAILROAD GRADE SEPARATED WORD LIST: " + $railroad_grade_separated.length.to_s + "\n",
+# 		"OVERPASS WORD LIST: " + $overpass.length.to_s + "\n",
+# 		"OVERPASS REALIGN WORD LIST: " + $overpass_realign.length.to_s + "\n",
+# 		"CONVERT ONE WAY WORD LIST: " + $convert_one_way.length.to_s + "\n",
+# 		"AUX LANE WORD LIST: " + $aux_lane.length.to_s + "\n",
+# 		"WIDEN SHOULDERS WORD LIST: " + $widen_shoulders.length.to_s + "\n",
+# 		"CONSTRUCT SHOULDERS WORD LIST: " + $construct_shoulders.length.to_s + "\n",
+# 		"UPGRADE STANDARDS WORD LIST: " + $upgrade_standards.length.to_s + "\n",
+# 		"WIDEN LANES WORD LIST: " + $widen_lanes.length.to_s + "\n",
+# 		"VERTICAL ALIGNMENT WORD LIST: " + $vertical_alignment.length.to_s + "\n",
+# 		"SUPER TWO WORD LIST: " + $super_two.length.to_s + "\n",
+# 		"DIVIDED: " + $divided.length.to_s + "\n",
+# 		"PASSING LANES WORD LIST: " + $passing_lanes.length.to_s + "\n",
+# 		"CENTER LEFT WORD LIST: " + $center_left.length.to_s + "\n",
+# 		"ROADWAY SIGNS WORD LIST: " + $roadway_signs.length.to_s + "\n",
+# 		"TOTAL: " + $total.to_s + "\n",
+# 	)}
 
-		"\n\nGRADE SEPARATED WORD LIST: \n", $grade_separated,
-		"\n\nRAILROAD GRADE SEPARATED WORD LIST: \n", $railroad_grade_separated,
-		"\n\nOVERPASS WORD LIST: \n", $overpass,
-		"\n\nOVERPASS REALIGN WORD LIST: \n", $overpass_realign,
-		"\n\nCONVERT ONE WAY WORD LIST: \n", $convert_one_way,
-		"\n\nAUX LANE WORD LIST: \n", $aux_lane,
-		"\n\nWIDEN SHOULDERS WORD LIST: \n", $widen_shoulders,
-		"\n\nCONSTRUCT SHOULDERS WORD LIST: \n", $construct_shoulders,
-		"\n\nUPGRADE STANDARDS WORD LIST: \n", $upgrade_standards,
-		"\n\nWIDEN LANES WORD LIST: \n", $widen_lanes,
-		"\n\nVERTICAL ALIGNMENT WORD LIST: \n", $vertical_alignment,
-		"\n\nSUPER TWO WORD LIST: \n", $super_two,
-		"\n\nDIVIDED: \n", $divided,
-		"\n\nPASSING LANES WORD LIST: \n", $passing_lanes,
-		"\n\nCENTER LEFT WORD LIST: \n", $center_left,
-		"\n\nROADWAY SIGNS WORD LIST: \n", $roadway_signs
+	File.open("./wordlist/safety_keywords.txt", "w") { 
+	|f| f.puts(
+		"\"Grade Separated\" Word List: \n", $grade_separated,
+		"\"Railroad Grade Separated\" Word List: \n", $railroad_grade_separated,
+		"\"Overpass\" Word List: \n", $overpass,
+		"\"Overpass realign\" Word List: \n", $overpass_realign,
+		"\"Convert One Way\" Word List: \n", $convert_one_way,
+		"\"Aux Lane\" Word List: \n", $aux_lane,
+		"\"Widen Shoulders\" Word List: \n", $widen_shoulders,
+		"\"Construct Shoulders\" Word List: \n", $construct_shoulders,
+		"\"Upgrade Standards\" Word List: \n", $upgrade_standards,
+		"\"Widen Lanes\" Word List: \n", $widen_lanes,
+		"\"Vertical Alignment\" Word List: \n", $vertical_alignment,
+		"\"Super Two\" Word List: \n", $super_two,
+		"\"Divided\" Word List: \n", $divided,
+		"\"Passing Lanes\" Word List: \n", $passing_lanes,
+		"\"Center Left\" Word List: \n", $center_left,
+		"\"Roadway Signs\" Word List: \n", $roadway_signs
 )}
 
 dur = Time.now - start

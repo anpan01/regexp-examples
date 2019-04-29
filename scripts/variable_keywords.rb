@@ -22,38 +22,40 @@ $remove_hov = /(RE?MO?V(E|ING)?|CO?NVE?RT(ING)?|DE?CO?NSTR?U?C?T?(I?O?N|I?N?G)?|
 $total = $construct.length + $remove.length + $road_suffix.length + $new_construct.length + $replace.length + $interchange.length + $median.length + $realign.length + $construct_undivided.length + $upgrade_standards.length + $construct_ramps.length + $ada.length + $hov.length + $remove_hov.length
 
 
-File.open("./wordlist/variable_word_lists.txt", "w+") { 
-	|f| f.write(
-		"CONSTRUCT WORD LIST NUMBER: " + $construct.length.to_s + "\n",
-		"REMOVE WORD LIST NUMBER: " + $remove.length.to_s + "\n",
-		"ROAD_SUFFIX WORD LIST NUMBER: " + $road_suffix.length.to_s + "\n",
-		"NEW_CONSTRUCT WORD LIST NUMBER: " + $new_construct.length.to_s + "\n",
-		"REPLACE WORD LIST NUMBER: " + $replace.length.to_s + "\n",
-		"INTERCHANGE WORD LIST NUMBER: " + $interchange.length.to_s + "\n",
-		"MEDIAN WORD LIST NUMBER: " + $median.length.to_s + "\n",
-		"REALIGN WORD LIST NUMBER: " + $realign.length.to_s + "\n",
-		"CONSTRUCT_UNDIVIDED WORD LIST NUMBER: " + $construct_undivided.length.to_s + "\n",
-		"UPGRADE_STANDARDS WORD LIST NUMBER: " + $upgrade_standards.length.to_s + "\n",
-		"CONSTRUCT_RAMPS WORD LIST NUMBER: " + $construct_ramps.length.to_s + "\n",
-		"ADA WORD LIST NUMBER: " + $ada.length.to_s + "\n",
-		"HOV WORD LIST NUMBER: " + $hov.length.to_s + "\n",
-		"REMOVE_HOV WORD LIST NUMBER: " + $remove_hov.length.to_s + "\n",
-		"TOTAL: " + $total.to_s + "\n",
+# File.open("./wordlist/variable_word_lists.txt", "a") { 
+# 	|f| f.write("\n",
+# 		"CONSTRUCT PHRASES: " + $construct.length.to_s + "\n",
+# 		"REMOVE PHRASES: " + $remove.length.to_s + "\n",
+# 		"ROAD_SUFFIX PHRASES: " + $road_suffix.length.to_s + "\n",
+# 		"NEW_CONSTRUCT PHRASES: " + $new_construct.length.to_s + "\n",
+# 		"REPLACE PHRASES: " + $replace.length.to_s + "\n",
+# 		"INTERCHANGE PHRASES: " + $interchange.length.to_s + "\n",
+# 		"MEDIAN PHRASES: " + $median.length.to_s + "\n",
+# 		"REALIGN PHRASES: " + $realign.length.to_s + "\n",
+# 		"CONSTRUCT_UNDIVIDED PHRASES: " + $construct_undivided.length.to_s + "\n",
+# 		"UPGRADE_STANDARDS PHRASES: " + $upgrade_standards.length.to_s + "\n",
+# 		"CONSTRUCT_RAMPS PHRASES: " + $construct_ramps.length.to_s + "\n",
+# 		"ADA PHRASES: " + $ada.length.to_s + "\n",
+# 		"HOV PHRASES: " + $hov.length.to_s + "\n",
+# 		"REMOVE_HOV PHRASES: " + $remove_hov.length.to_s + "\n",
+# 		"TOTAL: " + $total.to_s + "\n")}
 
-		"\n\nCONSTRUCT WORD LIST: \n", $construct, 
-		"\n\nREMOVE WORD LIST: \n", $remove, 
-		"\n\nROAD_SUFFIX WORD LIST: \n", $road_suffix, 
-		"\n\nNEW_CONSTRUCT WORD LIST: \n", $new_construct, 
-		"\n\nREPLACE WORD LIST: \n", $replace, 
-		"\n\nINTERCHANGE WORD LIST: \n", $interchange, 
-		"\n\nMEDIAN WORD LIST: \n", $median, 
-		"\n\nREALIGN WORD LIST: \n", $realign, 
-		"\n\nCONSTRUCT_UNDIVIDED WORD LIST: \n", $construct_undivided, 
-		"\n\nUPGRADE_STANDARDS WORD LIST: \n", $upgrade_standards, 
-		"\n\nCONSTRUCT_RAMPS WORD LIST: \n", $construct_ramps, 
-		"\n\nADA WORD LIST: \n", $ada, 
-		"\n\nHOV WORD LIST: \n", $hov, 
-		"\n\nREMOVE_HOV WORD LIST: \n", $remove_hov
+File.open("./wordlist/variable_word_lists.txt", "w") { 
+	|f| f.puts(
+		"\"Construct\" Word List: \n", $construct, 
+		"\"Remove\" Word List: \n", $remove, 
+		"\"Road Suffix\" Word List: \n", $road_suffix, 
+		"\"New Construct\" Word List: \n", $new_construct, 
+		"\"Replace\" Word List: \n", $replace, 
+		"\"Interchange\" Word List: \n", $interchange, 
+		"\"Median\" Word List: \n", $median, 
+		"\"Realign\" Word List: \n", $realign, 
+		"\"Construct Undivided\" Word List: \n", $construct_undivided, 
+		"\"Upgrade Standards\" Word List: \n", $upgrade_standards, 
+		"\"Construct Ramps\" Word List: \n", $construct_ramps, 
+		"\"ADA\" Word List: \n", $ada, 
+		"\"HOV\" Word List: \n", $hov, 
+		"\"Remove HOV\" Word List: \n", $remove_hov
 )}
 
 dur = Time.now - start

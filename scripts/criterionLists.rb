@@ -13,33 +13,46 @@ $ENVIRONMENTAL = /(DRAIN(AGE)?S?|ENV(I?R?O?N?M?E?NT)?(AL)?S?|IRRIGAT(E|ION)?S?|L
 
 #SAFETY
 File.open("./wordlist/safety.txt", "w") {
-	|f| f.write("TOTAL WORDS: " + $SAFETY.examples.length.to_s + "\n", $SAFETY.examples)
+	|f| f.write($SAFETY.examples.join(",") + "/n")
 }
 
 #PRESERVATION
 File.open("./wordlist/preservation.txt", "w") {
-	|f| f.write("TOTAL WORDS: " + $PRESERVATION.examples.length.to_s + "\n", $PRESERVATION.examples)
+	|f| f.write($PRESERVATION.examples.join(",") + "/n")
 }
 
 #CONGESTION
 File.open("./wordlist/congestion.txt", "w") {
-	|f| f.write("TOTAL WORDS: " + $CONGESTION.examples.length.to_s + "\n", $CONGESTION.examples)
+	|f| f.write($CONGESTION.examples.join(",") + "/n")
 }
 
 ##CONNECTIVITY
 File.open("./wordlist/connectivity.txt", "w") {
-	|f| f.write("TOTAL WORDS: " + $CONNECTIVITY.examples.length.to_s + "\n", $CONNECTIVITY.examples)
+	|f| f.write($CONNECTIVITY.examples.join(",") + "/n")
 }
 
 #ECONOMIC
 File.open("./wordlist/economic.txt", "w") {
-	|f| f.write("TOTAL WORDS: " + $ECONOMIC.examples.length.to_s + "\n", $ECONOMIC.examples)
+	|f| f.write($ECONOMIC.examples.join(",") + "/n")
 }
 
 #ENVIRONMENTAL
 File.open("./wordlist/environmental.txt", "w") {
-	|f| f.write("TOTAL WORDS: " + $ENVIRONMENTAL.examples.length.to_s + "\n", $ENVIRONMENTAL.examples)
+	|f| f.write($ENVIRONMENTAL.examples.join(',') + "/n")
 }
+
+
+File.open("./wordlist/summary.txt", "a") {
+	|f| f.write(
+		"TOTAL PHRASES ENVIRONMENTAL: " + $ENVIRONMENTAL.examples.length.to_s + "\n",
+		"TOTAL PHRASES SAFETY: " + $SAFETY.examples.length.to_s + "\n",
+		"TOTAL PHRASES PRESERVATION: " + $PRESERVATION.examples.length.to_s + "\n",
+		"TOTAL PHRASES CONGESTION: " + $CONGESTION.examples.length.to_s + "\n",
+		"TOTAL PHRASES CONNECTIVITY: " + $CONNECTIVITY.examples.length.to_s + "\n",
+		"TOTAL PHRASES ECONOMIC: " + $ECONOMIC.examples.length.to_s + "\n"
+	)
+}
+
 
 dur = Time.now - start
 
