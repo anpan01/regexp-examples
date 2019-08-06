@@ -26,15 +26,15 @@ $total = $congestion_index_add_aux_lanes.length + $congestion_index_ramp_reconfi
 # 		"NEW_INTERCHANGE NUMBER OF WORDS: " + $new_interchange.length.to_s + "\n",
 # 		"TOTAL: " + $total.to_s + "\n")}
 
-File.open("./wordlist/congestion_index_lookups.txt", "w") { 
+File.open("./wordlist/temp.txt", "w") { 
 	|f| f.puts(
-		"\"Add Aux Lanes\" Word List: \n", $congestion_index_add_aux_lanes,
-		"\"Ramp Reconfiguration\" Word List: \n", $congestion_index_ramp_reconfiguration,
-		"\"ITS\" Word List: \n", $congestion_index_its,
-		"\"INT IMP\" Word List: \n", $congestion_index_int_imp,
-		"\"Grade Separation\" Word List: \n", $congestion_index_grade_sep,
-		"\"Replace Interchange\" Word List: \n", $replace_interchange,
-		"\"New Interchange\" Word List: \n", $new_interchange
+		# "\"Add Aux Lanes\" Word List: \n", $congestion_index_add_aux_lanes,
+		# "\"Ramp Reconfiguration\" Word List: \n", $congestion_index_ramp_reconfiguration,
+		# "\"ITS\" Word List: \n", $congestion_index_its,
+		# "\"INT IMP\" Word List: \n", $congestion_index_int_imp,
+		# "\"Grade Separation\" Word List: \n", $congestion_index_grade_sep,
+		# "\"Replace Interchange\" Word List: \n", $replace_interchange,
+		 "\"New Interchange\" Word List: \n", $new_interchange
 )}
 
 dur = Time.now - start
