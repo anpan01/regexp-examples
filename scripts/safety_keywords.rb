@@ -2,7 +2,6 @@ require 'pstore'
 require 'pp'
 require 'time'
 require_relative '../lib/regexp-examples.rb'
-
 start = Time.now
 
 $grade_separated = /GRA?DE? SEP(A?RA?T(E?D|I?O?N))?/.examples
@@ -45,24 +44,26 @@ $total = $grade_separated.length + $railroad_grade_separated.length + $overpass.
 # 		"TOTAL: " + $total.to_s + "\n",
 # 	)}
 
-	File.open("./wordlist/safety_keywords.txt", "w") { 
+	File.open("./wordlist/safety_keywords_updateWF.txt", "w") { 
 	|f| f.puts(
+		"\"Aux Lane\" Word List: \n", $aux_lane,
+		"\"Center Left\" Word List: \n", $center_left,
+		"\"Construct Shoulders\" Word List: \n", $construct_shoulders,
+		"\"Convert One Way\" Word List: \n", $convert_one_way,
+		"\"Divided\" Word List: \n", $divided,
 		"\"Grade Separated\" Word List: \n", $grade_separated,
-		"\"Railroad Grade Separated\" Word List: \n", $railroad_grade_separated,
 		"\"Overpass\" Word List: \n", $overpass,
 		"\"Overpass realign\" Word List: \n", $overpass_realign,
-		"\"Convert One Way\" Word List: \n", $convert_one_way,
-		"\"Aux Lane\" Word List: \n", $aux_lane,
-		"\"Widen Shoulders\" Word List: \n", $widen_shoulders,
-		"\"Construct Shoulders\" Word List: \n", $construct_shoulders,
-		"\"Upgrade Standards\" Word List: \n", $upgrade_standards,
-		"\"Widen Lanes\" Word List: \n", $widen_lanes,
-		"\"Vertical Alignment\" Word List: \n", $vertical_alignment,
-		"\"Super Two\" Word List: \n", $super_two,
-		"\"Divided\" Word List: \n", $divided,
 		"\"Passing Lanes\" Word List: \n", $passing_lanes,
-		"\"Center Left\" Word List: \n", $center_left,
+		"\"Railroad Grade Separated\" Word List: \n", $railroad_grade_separated,
 		"\"Roadway Signs\" Word List: \n", $roadway_signs
+		"\"Super Two\" Word List: \n", $super_two,
+		"\"Upgrade Standards\" Word List: \n", $upgrade_standards,
+		"\"Vertical Alignment\" Word List: \n", $vertical_alignment,
+		"\"Widen Shoulders\" Word List: \n", $widen_shoulders, 
+		"\"Widening\" Word List: \n", $widening,
+		"\"Widening Shoulders\" Word List: \n", $widening_shoulders,
+		"\"Widening Lanes\" Word List: \n", $widening_lanes,
 )}
 
 dur = Time.now - start
